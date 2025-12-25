@@ -1,0 +1,32 @@
+1. Set Up the Theme Directory
+Create a custom theme directory in the Keycloak themes folder:
+<keycloak-root>/themes/my-custom-theme
+
+2. Copy an Existing Theme
+Copy an existing Keycloak theme as a starting point:
+cp -r base my-custom-theme
+
+3. Customize Theme Files
+Modify the files in your theme folder:
+login/theme.properties → update theme name, variants, etc.
+login/login.ftl → edit HTML structure.
+resources/css/*.css → customize styles (colors, fonts).
+resources/img/ → add logos, background images.
+
+4. Configure Keycloak to Use Your Theme
+Open Keycloak Admin Console → Realm Settings → Themes
+Under Login Theme, select your custom theme (my-custom-theme)
+Save changes.
+
+5. Test Your Custom Login Page
+Open a private/incognito browser.
+Navigate to your Keycloak login URL:
+https://<your-domain>/auth/realms/<realm-name>/protocol/openid-connect/auth
+
+
+Verify branding, colors, and layout.
+
+6. Optional Enhancements
+Add custom JS for interactivity (resources/js/)
+Use custom messages and translations (messages/messages.properties)
+Test responsiveness on mobile devices.
